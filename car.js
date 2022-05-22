@@ -124,7 +124,7 @@ class Car {
     return points;
 
   }
-  draw(ctx, color){
+  draw(ctx, color, drawSensor=false){
     if(this.damaged){
       ctx.fillStyle="red";
     } else {
@@ -137,7 +137,7 @@ class Car {
     }
     ctx.fill();
 
-    if (this.sensor) {
+    if (this.sensor && drawSensor) {
       this.sensor.draw(ctx);
     }
 
